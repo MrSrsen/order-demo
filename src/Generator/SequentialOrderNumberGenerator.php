@@ -2,7 +2,6 @@
 
 namespace App\Generator;
 
-use App\Entity\Order;
 use App\Entity\OrderSequence;
 use Doctrine\DBAL\LockMode;
 use Doctrine\ORM\EntityManagerInterface;
