@@ -1,0 +1,2 @@
+id,number,createdAt,title,total,currency,state,orderItems.0.id,orderItems.0.title,orderItems.0.unitPrice,orderItems.0.quantity,orderItems.0.total,orderItems.1.id,orderItems.1.title,orderItems.1.unitPrice,orderItems.1.quantity,orderItems.1.total
+1,001,2025-02-07T00:00:00+01:00,"First order",970.00,CZK,new,1,Shirt,100.00,1.00,100.00,2,Shoes,870.00,1.00,870.00

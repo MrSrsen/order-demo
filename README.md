@@ -18,7 +18,30 @@
 `src/Entity/OrderItem.php`
 
 > Formát odpovědi je na Vás. Můžete zkusit připravit řešení umožňující podporu s více
-> formáty. Zamyslete se nad REST pojmenováním endpointů a návratovými kódy, které se v
+> formáty.
+
+```http request
+GET /api/order/{orderId}
+Accept: application/json
+```
+
+`tests/Api/OrderTest.php`
+
+```http request
+GET /api/order/{orderId}
+Accept: application/xml
+```
+
+`tests/Api/OrderTest.php`
+
+```http request
+GET /api/order/{orderId}
+Accept: test/csv
+```
+
+`tests/Api/OrderTest.php`
+
+> Zamyslete se nad REST pojmenováním endpointů a návratovými kódy, které se v
 > REST používají.
 
 `GET /api/order/1` -> `200`  

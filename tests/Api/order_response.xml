@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<response><id>1</id><number>001</number><createdAt>2025-02-07T00:00:00+01:00</createdAt><title>First order</title><total>970.00</total><currency>CZK</currency><state>new</state><orderItems><id>1</id><title>Shirt</title><unitPrice>100.00</unitPrice><quantity>1.00</quantity><total>100.00</total></orderItems><orderItems><id>2</id><title>Shoes</title><unitPrice>870.00</unitPrice><quantity>1.00</quantity><total>870.00</total></orderItems></response>

@@ -53,4 +53,28 @@ class OrderTest extends ApiTestCase
             ],
         ]);
     }
+
+    public function testGettingXmlOrder(): void
+    {
+        $response = $this->client->request('GET', '/api/orders/1', [
+            'headers' => [
+                'Accept' => 'application/xml',
+            ],
+        ]);
+        $this->assertResponseIsSuccessful();
+
+        $this->assertEquals(\file_get_contents(__DIR__.'/order_response.xml'), $response->getContent(false));
+    }
+
+    public function testGettingCsvOrder(): void
+    {
+        $response = $this->client->request('GET', '/api/orders/1', [
+            'headers' => [
+                'Accept' => 'text/csv',
+            ],
+        ]);
+        $this->assertResponseIsSuccessful();
+
+        $this->assertEquals(\file_get_contents(__DIR__.'/order_response.csv'), $response->getContent(false));
+    }
 }
