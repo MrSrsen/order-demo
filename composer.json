@@ -72,6 +72,9 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "test": [
+            "php ./vendor/bin/phpunit --testdox --testsuite api"
         ]
     },
     "conflict": {
@@ -84,6 +87,10 @@
         }
     },
     "require-dev": {
-        "doctrine/doctrine-fixtures-bundle": "^4.0"
+        "doctrine/doctrine-fixtures-bundle": "^4.0",
+        "phpunit/phpunit": "^9.5",
+        "symfony/browser-kit": "7.2.*",
+        "symfony/css-selector": "7.2.*",
+        "symfony/phpunit-bridge": "^7.2"
     }
 }
