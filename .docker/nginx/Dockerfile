@@ -1,0 +1,12 @@
+FROM nginx:1.21.4
+
+ARG USERID=1000
+ARG GROUPID=1000
+ARG USERNAME=worker
+
+ENV USERID=${USERID}
+ENV GROUPID=${GROUPID}
+ENV USERNAME=${USERNAME}
+
+RUN groupadd --gid ${GROUPID} ${USERNAME} && \
+    useradd --uid ${USERID} --gid ${GROUPID} --system ${USERNAME}
