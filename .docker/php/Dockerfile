@@ -51,4 +51,4 @@ USER ${USERNAME}
 #     && chown -R ${USERNAME}:${USERNAME} /app
 
 RUN git config --global user.email "martin@srsen.sk" \
-    && git config --global user.name "Martin Srsen" \
+    && git config --global user.name "Martin Srsen"

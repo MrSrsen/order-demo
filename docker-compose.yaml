@@ -19,7 +19,7 @@ services:
         expose:
             - 9000
         working_dir: /app
-        command: sh -c 'php-fpm'
+        command: sh -c 'composer install && php bin/console doctrine:database:create --if-not-exists -n && php bin/console doctrine:migrations:migrate -n && php-fpm'
         extra_hosts:
             - "host.docker.internal:host-gateway"
 
