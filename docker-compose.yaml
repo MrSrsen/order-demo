@@ -19,8 +19,7 @@ services:
         expose:
             - 9000
         working_dir: /app
-        # command: sh -c 'php-fpm'
-        command: tail -f /dev/null
+        command: sh -c 'php-fpm'
         extra_hosts:
             - "host.docker.internal:host-gateway"
 

@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+
+<serializer xmlns="http://symfony.com/schema/dic/serializer-mapping"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://symfony.com/schema/dic/serializer-mapping https://symfony.com/schema/dic/serializer-mapping/serializer-mapping-1.0.xsd"
+>
+    <class name="App\Entity\OrderItem">
+        <attribute name="id">
+            <group>order:read</group>
+        </attribute>
+        <attribute name="title">
+            <group>order:read</group>
+        </attribute>
+        <attribute name="unitPrice">
+            <group>order:read</group>
+        </attribute>
+        <attribute name="quantity">
+            <group>order:read</group>
+        </attribute>
+        <attribute name="total">
+            <group>order:read</group>
+        </attribute>
+    </class>
+</serializer>
