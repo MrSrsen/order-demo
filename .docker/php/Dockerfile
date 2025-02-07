@@ -24,10 +24,17 @@ RUN apk add --no-cache busybox-suid sudo bash git libzip-dev \
     && curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.alpine.sh' | sudo -E bash \
     && apk add symfony-cli
 
-# Project PHP extensions
-RUN apk add --no-cache freetype-dev libjpeg-turbo-dev libpng-dev \
-    && docker-php-ext-install pdo pdo_mysql exif gd \
-    && docker-php-ext-enable pdo pdo_mysql exif gd
+# Decimal extension
+RUN BUILD_DEPS="autoconf gcc musl-dev make" \
+    && apk add --no-cache --virtual .build-deps ${BUILD_DEPS} \
+    && apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/main mpdecimal-dev \
+    && pecl install -o -f decimal \
+    && docker-php-ext-enable decimal \
+    && apk --purge del .build-deps
+
+# DB extensions
+RUN docker-php-ext-install pdo pdo_mysql \
+    && docker-php-ext-enable pdo pdo_mysql
 
 # Install xdebug
 RUN apk add --no-cache --virtual .phpize-deps $PHPIZE_DEPS linux-headers \
