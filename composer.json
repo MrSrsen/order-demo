@@ -75,6 +75,9 @@
         ],
         "test": [
             "php ./vendor/bin/phpunit --testdox --testsuite api"
+        ],
+        "cs": [
+            "@php vendor/bin/php-cs-fixer fix"
         ]
     },
     "conflict": {
@@ -87,10 +90,14 @@
         }
     },
     "require-dev": {
+        "doctrine/data-fixtures": "^2.0",
         "doctrine/doctrine-fixtures-bundle": "^4.0",
+        "friendsofphp/php-cs-fixer": "^3.68",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "7.2.*",
         "symfony/css-selector": "7.2.*",
-        "symfony/phpunit-bridge": "^7.2"
+        "symfony/http-client": "7.2.*",
+        "symfony/phpunit-bridge": "^7.2",
+        "theofidry/alice-data-fixtures": "^1.7"
     }
 }

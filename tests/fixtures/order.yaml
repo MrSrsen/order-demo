@@ -1,0 +1,22 @@
+App\Entity\Order:
+    order_first:
+        __construct:
+            number: '001'
+            createdAt: <(new \DateTimeImmutable('2025-02-07 15:22:24'))>
+            title: 'First order'
+            currency: 'CZK'
+        id: 1
+
+App\Entity\OrderItem:
+    order_item_shirt:
+        __construct:
+            order: '@order_first'
+            title: 'Shirt'
+            unitPrice: <(new \Decimal\Decimal('100'))>
+            quantity: <(new \Decimal\Decimal('1'))>
+    order_item_shoes:
+        __construct:
+            order: '@order_first'
+            title: 'Shoes'
+            unitPrice: <(new \Decimal\Decimal('870'))>
+            quantity: <(new \Decimal\Decimal('1'))>

@@ -53,5 +53,4 @@ readonly class SequentialOrderNumberGenerator
 
         return $sequence;
     }
-
 }

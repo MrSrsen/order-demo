@@ -54,6 +54,12 @@ class Order
         return $this->id;
     }
 
+    /** @internal For tests only */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
     public function getNumber(): string
     {
         return $this->number;
